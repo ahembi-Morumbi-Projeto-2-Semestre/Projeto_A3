@@ -14,13 +14,12 @@
 
 ### `application/`
 - `port/out/`
-    - `PersonagemRepository.java` *(interface: contrato de acesso aos personagens)*
+    - `JogadorRepository.java` *(interface: contrato de acesso aos personagens)*
 - `service/`
-    - `ListarPersonagensService.java`
-    - `IniciarBatalhaService.java` 
+    - `JogadorService.java`
 
 ### `adapter/`
 - `in/`
     - `Main.java` *(menu e prints)*
 - `out/`
-    - `PersonagemMemoriaAdapter.java` *(implementa o repository: fabrica os personagens e devolve a lista)*
+    - `JogadorMemoriaAdapter.java` *(implementa o repository: fabrica os personagens e devolve a lista)*
