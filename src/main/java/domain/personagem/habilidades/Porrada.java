@@ -6,12 +6,17 @@ import java.util.List;
 
 public class Porrada implements Habilidade {
 
+    private static final int PONTOS = 10;
+
     @Override
-    public void habilidade(int pontos, List<Personagem> pAlvos, Personagem pOrigem) {
+    public int getPontos() {
+        return PONTOS;
+    }
 
-            pontos = 10;
+    @Override
+    public void habilidade(List<Personagem> pAlvos, Personagem pOrigem) {
 
-            int danoAtaque =  pontos * pOrigem.getPontosAtaque();
+            int danoAtaque =  getPontos() * pOrigem.getPontosAtaque();
 
             for(Personagem p : pAlvos){
                 p.receberDano(danoAtaque);
