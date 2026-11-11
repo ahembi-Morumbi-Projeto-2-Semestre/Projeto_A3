@@ -17,9 +17,33 @@ public abstract class  Personagem  {
     private String tipoPersonagem;
     private List<Habilidade> habilidades = new ArrayList<>();
 
+    public boolean estaVivo(){
+        return this.pontosDeVida > 0;
+    }
+
+    public void receberDano(int dano){
+        int danoTotal = dano - this.defesaAtual;
+
+        if(danoTotal <= 0) { danoTotal = 0; }
+
+        this.pontosDeVida -= danoTotal;
+    }
+
     //getters e setters
     public String getNome() {
         return nome;
+    }
+
+    public void adicionarHabilidade(List<Habilidade> habilidadeList) {
+        habilidades.addAll(habilidadeList);
+    }
+
+    public List<Habilidade> getHabilidades() {
+        return habilidades;
+    }
+
+    public void receberProtecao(int protecao){
+        this.defesaAtual += protecao;
     }
 
     public void setNome(String nome) {
@@ -72,25 +96,5 @@ public abstract class  Personagem  {
 
     public void setTipoPersonagem(String tipoPersonagem) {
         this.tipoPersonagem = tipoPersonagem;
-    }
-
-    public boolean estaVivo(){
-        return this.pontosDeVida >= 0;
-    }
-
-    public void receberDano(int dano){
-        int danoTotal = dano - this.defesaAtual;
-
-        if(danoTotal <= 0) { danoTotal = 0; }
-
-        this.pontosDeVida -= danoTotal;
-    }
-
-    public void receberProtecao(int protecao){
-        this.defesaAtual += protecao;
-    }
-
-    public void adicionarHabilidade(List<Habilidade> habilidadeList) {
-        habilidades.addAll(habilidadeList);
     }
 }

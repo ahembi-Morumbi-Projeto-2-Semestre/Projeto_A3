@@ -4,6 +4,9 @@ import domain.personagem.Personagem;
 
 import java.util.List;
 
+
 public interface Habilidade  {
-    void habilidade(int pontos, List<Personagem> pAlvos, Personagem pOrigem);
+
+    int getPontos();   // toda habilidade TEM que informar seus pontos
+    void habilidade(List<Personagem> pAlvos, Personagem pOrigem);
 }
