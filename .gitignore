@@ -16,15 +16,21 @@ out/
 *.ipr
 
 ### Eclipse ###
-bin/
 .metadata/
-.apt_generated
-.classpath
-.factorypath
-.project
 .settings/
+.classpath
+.project
+.factorypath
+.apt_generated/
+.recommenders/
 .springBeans
-.sts4-cache
+.sts4-cache/
+.loadpath
+RemoteSystemsTempFiles/
+local.properties
+*.tmp
+*.bak
+*.swp
 
 ### NetBeans ###
 /nbproject/private/
