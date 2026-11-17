@@ -10,7 +10,7 @@ public class Equipe {
 
 
     public void adcionarPersonagemNaEquipe(Personagem personagem){
-        if (personagems.size()  < 1)  {
+        if (personagems.size()  < 2)  {
             personagems.add(personagem);
         }
     }
