@@ -2,24 +2,28 @@
 
 ### `domain/`
 - `personagem/`
-    - `Personagem.java` *(abstract)*
-    - `Feiticeiro.java` *(e demais tipos: Guerreiro, ...)*
-    - `TipoPersonagem.java` *(enum: Feiticeiro, ...)*
-    - `Acao.java` *(enum: ACAO_UNICA, ACAO_AREA)*
+  - `Personagem.java` *(abstract)*
+  - `Feiticeiro.java` *(e demais tipos: Guerreiro, ...)*
+  - `TipoPersonagem.java` *(enum: Feiticeiro, ...)*
+  - `habilidades/`
+    - `Habilidade.java` *(interface)*
+    - `HabilidadeDeDano.java` *(implementa Habilidade)*
+    - `HabilidadeDeCura.java` *(implementa Habilidade)*
+- `jogador/`
+  - `Jogador.java` *(tem uma Equipe)*
+  - `Equipe.java` *(tem a lista de Personagens)*
 - `batalha/`
-    - `Batalha.java` *(era a Partida)*
-    - `ResultadoTurno.java` *(sugestão: devolve o que aconteceu no turno)*
-    - `Equipe.java`
-    - `Jogador.java`
+  - `Batalha.java` *(turnos, vez de quem joga e vencedor)*
+  - `ResultadoTurno.java` *(devolve o que aconteceu na ação)*
 
 ### `application/`
 - `port/out/`
-    - `JogadorRepository.java` *(interface: contrato de acesso aos personagens)*
+  - `JogadorRepository.java` *(interface: contrato para obter jogadores e suas equipes)*
 - `service/`
-    - `JogadorService.java`
+  - `JogadorService.java` *(casos de uso: montar jogadores e equipes)*
 
 ### `adapter/`
 - `in/`
-    - `Main.java` *(menu e prints)*
+  - `Main.java` *(menu, leitura do teclado e prints)*
 - `out/`
-    - `JogadorMemoriaAdapter.java` *(implementa o repository: fabrica os personagens e devolve a lista)*
+  - `JogadorMemoriaAdapter.java` *(implementa o repository: fabrica jogadores, equipes e personagens em memória)*
